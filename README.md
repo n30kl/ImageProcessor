@@ -2,7 +2,7 @@
 The library allows you to process one or more graphic images in .bmp, .jpg, .png formats. The library can process images in the following directions: changing brightness and contrast, applying a grayscale filter and sepia tone, obtaining inverted colors, rotating and flipping the image.
 
 Well... Hi!!!!!
-It`s my first library i'd newer develop.
+It`s my first library i'd ewer develop.
 You can use in on all of .Net projects (not shure).
 So, here is some tips hiw to use it:
 
