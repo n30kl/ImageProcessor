@@ -3,7 +3,7 @@ The library allows you to process one or more graphic images in .bmp, .jpg, .png
 
 Well... Hi!!!!!
 It`s my first library i'd ewer develop.
-You can use it on all of .Net projects (not shure).
+You can use it on all of .Net projects (not sure).
 So, here is some tips how to use it:
 
 1) Create new project using c#;
