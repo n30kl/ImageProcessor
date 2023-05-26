@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ImageProcessor</name>
+    </assembly>
+    <members>
+        <member name="M:ImageProcessor.Processing.#ctor(System.String)">
+             <summary>
+            Implements processing of one image.
+             </summary>
+        </member>
+        <member name="M:ImageProcessor.Processing.#ctor(System.Collections.Generic.List{System.Drawing.Bitmap})">
+            <summary>
+            Implements processing of several images.
+            </summary>
+        </member>
+        <member name="M:ImageProcessor.Processing.Brightness(System.Int32)">
+            <summary>
+            Changes the brightness of the image in the range of values ​​from -100 to 100, where 0 is the brightness of the original image.
+            </summary>
+        </member>
+        <member name="M:ImageProcessor.Processing.Contrast(System.Int32)">
+            <summary>
+            Changes the contrast of the image in the range of values ​​from -100 to 100, where 0 is the contrast of the original image.
+            </summary>
+        </member>
+        <member name="M:ImageProcessor.Processing.Grayscale">
+            <summary>
+            Applies a grayscale filter to the image.
+            </summary>
+        </member>
+        <member name="M:ImageProcessor.Processing.Invert">
+            <summary>
+            Inverts the colors of the image.
+            </summary>
+        </member>
+        <member name="M:ImageProcessor.Processing.Sepia">
+            <summary>
+            Adds a sepia tone to the image.
+            </summary>
+        </member>
+        <member name="M:ImageProcessor.Processing.Rotate(System.Int32)">
+            <summary>
+            Rotates the image by 90, 180 and 270 degrees. Accepts as input the numerical value of the turn from the ones offered above.
+            </summary>
+        </member>
+        <member name="M:ImageProcessor.Processing.Flip(System.Int32)">
+            <summary>
+            Flipping the image horizontally or vertically, where 0 is displayed horizontally, and 1 is displayed vertically.
+            </summary>
+        </member>
+        <member name="M:ImageProcessor.Processing.ParallelBrightness(System.Int32)">
+            <summary>
+            Changes the brightness of each image from the list in the range of values ​​from -100 to 100, where 0 is the brightness of the original image.
+            </summary>
+        </member>
+        <member name="M:ImageProcessor.Processing.ParallelContrast(System.Int32)">
+            <summary>
+            Changes the contrast of each image from the list in the range of values ​​from -100 to 100, where 0 is the contrast of the original image.
+            </summary>
+        </member>
+        <member name="M:ImageProcessor.Processing.ParallelGrayscale">
+            <summary>
+            Applies a grayscale filter to each image in the list.
+            </summary>
+        </member>
+        <member name="M:ImageProcessor.Processing.ParallelInvert">
+            <summary>
+            Inverts the colors of each image in the list.
+            </summary>
+        </member>
+        <member name="M:ImageProcessor.Processing.ParallelSepia">
+            <summary>
+            Adds a sepia tone to each image in the list.
+            </summary>
+        </member>
+        <member name="M:ImageProcessor.Processing.ParallelRotate(System.Int32)">
+            <summary>
+            Rotates each image in the list by 90, 180, and 270 degrees. Accepts as input the numerical value of the turn from the ones offered above.
+            </summary>
+        </member>
+        <member name="M:ImageProcessor.Processing.ParallelFlip(System.Int32)">
+            <summary>
+            Flipping each image from the list horizontally or vertically, where 0 is displayed horizontally and 1 is displayed vertically.
+            </summary>
+        </member>
+    </members>
+</doc>
