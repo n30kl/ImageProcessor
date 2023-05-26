@@ -33,3 +33,10 @@ So, here is some tips hiw to use it:
 THANKS FOR YOUR ATTANTION. I will glad, if this would be useful for you.
   If you have any questions - contact me: valeriadovgan@gmail.com
  
+------------------------
+P.S.: you can process next types of images: bmp, jpg, png.
+P.S.2: i`m not check my mail, so try to contact me in other way.
+  
+  
+  ![image](https://github.com/n30kl/ImageProcessor/assets/60884465/0d12a2cd-f324-407b-bd6f-ab0e930e3554)
+
