@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Threading;
 using Image = System.Drawing.Image;
@@ -44,7 +44,7 @@ namespace ImageProcessor
 
         #region Sequentional
         /// <summary>
-        /// Changes the brightness of the image in the range of values ​​from -100 to 100, where 0 is the brightness of the original image.
+        /// Changes the brightness of the image in the range of values from -100 to 100, where 0 is the brightness of the original image.
         /// </summary>
         public Bitmap Brightness(int brghtnss)
         {
@@ -83,7 +83,7 @@ namespace ImageProcessor
         }
 
         /// <summary>
-        /// Changes the contrast of the image in the range of values ​​from -100 to 100, where 0 is the contrast of the original image.
+        /// Changes the contrast of the image in the range of values from -100 to 100, where 0 is the contrast of the original image.
         /// </summary>
         public Bitmap Contrast(int contrst)
         {
@@ -267,57 +267,57 @@ namespace ImageProcessor
         #region Pool
 
         /// <summary>
-        /// Changes the brightness of each image from the list in the range of values ​​from -100 to 100, where 0 is the brightness of the original image.
+        /// Changes the brightness of each image from the list in the range of values from -100 to 100, where 0 is the brightness of the original image.
         /// </summary>
         public List<Bitmap> ParallelBrightness(int brghtnss)
         {
             List<Bitmap> result = new List<Bitmap>();
-            using (CountdownEvent cde = new CountdownEvent(1))
+            using (CountdownEvent cuuntdeve = new CountdownEvent(1))
             {
-                ManualResetEvent manualResetEvent = new ManualResetEvent(false);
+                ManualResetEvent manualResEve = new ManualResetEvent(false);
 
                 foreach (var v in bmp)
                 {
-                    bool enqueued = ThreadPool.QueueUserWorkItem(delegate
+                    bool isEnqueued = ThreadPool.QueueUserWorkItem(delegate
                     {
-                        cde.AddCount();
+                        cuuntdeve.AddCount();
                         bitmap = v;
                         result.Add(Brightness(brghtnss));
-                        cde.Signal();
-                        manualResetEvent.Set();
+                        cuuntdeve.Signal();
+                        manualResEve.Set();
                     });
                 }
-                manualResetEvent.WaitOne();
-                cde.Signal();
-                cde.Wait();
+                manualResEve.WaitOne();
+                cuuntdeve.Signal();
+                cuuntdeve.Wait();
             }
             return result;
         }
 
         /// <summary>
-        /// Changes the contrast of each image from the list in the range of values ​​from -100 to 100, where 0 is the contrast of the original image.
+        /// Changes the contrast of each image from the list in the range of values from -100 to 100, where 0 is the contrast of the original image.
         /// </summary>
         public List<Bitmap> ParallelContrast(int contrst)
         {
             List<Bitmap> result = new List<Bitmap>();
-            using (CountdownEvent cde = new CountdownEvent(1))
+            using (CountdownEvent cuuntdeve = new CountdownEvent(1))
             {
-                ManualResetEvent manualResetEvent = new ManualResetEvent(false);
+                ManualResetEvent manualResEve = new ManualResetEvent(false);
 
                 foreach (var v in bmp)
                 {
-                    bool enqueued = ThreadPool.QueueUserWorkItem(delegate
+                    bool isEnqueued = ThreadPool.QueueUserWorkItem(delegate
                     {
-                        cde.AddCount();
+                        cuuntdeve.AddCount();
                         bitmap = v;
                         result.Add(Contrast(contrst));
-                        cde.Signal();
-                        manualResetEvent.Set();
+                        cuuntdeve.Signal();
+                        manualResEve.Set();
                     });
                 }
-                manualResetEvent.WaitOne();
-                cde.Signal();
-                cde.Wait();
+                manualResEve.WaitOne();
+                cuuntdeve.Signal();
+                cuuntdeve.Wait();
             }
             return result;
         }
@@ -328,24 +328,24 @@ namespace ImageProcessor
         public List<Bitmap> ParallelGrayscale()
         {
             List<Bitmap> result = new List<Bitmap>();
-            using (CountdownEvent cde = new CountdownEvent(1))
+            using (CountdownEvent cuuntdeve = new CountdownEvent(1))
             {
-                ManualResetEvent manualResetEvent = new ManualResetEvent(false);
+                ManualResetEvent manualResEve = new ManualResetEvent(false);
 
                 foreach (var v in bmp)
                 {
-                    bool enqueued = ThreadPool.QueueUserWorkItem(delegate
+                    bool isEnqueued = ThreadPool.QueueUserWorkItem(delegate
                     {
-                        cde.AddCount();
+                        cuuntdeve.AddCount();
                         bitmap = v;
                         result.Add(Grayscale());
-                        cde.Signal();
-                        manualResetEvent.Set();
+                        cuuntdeve.Signal();
+                        manualResEve.Set();
                     });
                 }
-                manualResetEvent.WaitOne();
-                cde.Signal();
-                cde.Wait();
+                manualResEve.WaitOne();
+                cuuntdeve.Signal();
+                cuuntdeve.Wait();
             }
             return result;
         }
@@ -356,24 +356,24 @@ namespace ImageProcessor
         public List<Bitmap> ParallelInvert()
         {
             List<Bitmap> result = new List<Bitmap>();
-            using (CountdownEvent cde = new CountdownEvent(1))
+            using (CountdownEvent cuuntdeve = new CountdownEvent(1))
             {
-                ManualResetEvent manualResetEvent = new ManualResetEvent(false);
+                ManualResetEvent manualResEve = new ManualResetEvent(false);
 
                 foreach (var v in bmp)
                 {
-                    bool enqueued = ThreadPool.QueueUserWorkItem(delegate
+                    bool isEnqueued = ThreadPool.QueueUserWorkItem(delegate
                     {
-                        cde.AddCount();
+                        cuuntdeve.AddCount();
                         bitmap = v;
                         result.Add(Invert());
-                        cde.Signal();
-                        manualResetEvent.Set();
+                        cuuntdeve.Signal();
+                        manualResEve.Set();
                     });
                 }
-                manualResetEvent.WaitOne();
-                cde.Signal();
-                cde.Wait();
+                manualResEve.WaitOne();
+                cuuntdeve.Signal();
+                cuuntdeve.Wait();
             }
             return result;
         }
@@ -384,24 +384,24 @@ namespace ImageProcessor
         public List<Bitmap> ParallelSepia()
         {
             List<Bitmap> result = new List<Bitmap>();
-            using (CountdownEvent cde = new CountdownEvent(1))
+            using (CountdownEvent cuuntdeve = new CountdownEvent(1))
             {
-                ManualResetEvent manualResetEvent = new ManualResetEvent(false);
+                ManualResetEvent manualResEve = new ManualResetEvent(false);
 
                 foreach (var v in bmp)
                 {
-                    bool enqueued = ThreadPool.QueueUserWorkItem(delegate
+                    bool isEnqueued = ThreadPool.QueueUserWorkItem(delegate
                     {
-                        cde.AddCount();
+                        cuuntdeve.AddCount();
                         bitmap = v;
                         result.Add(Sepia());
-                        cde.Signal();
-                        manualResetEvent.Set();
+                        cuuntdeve.Signal();
+                        manualResEve.Set();
                     });
                 }
-                manualResetEvent.WaitOne();
-                cde.Signal();
-                cde.Wait();
+                manualResEve.WaitOne();
+                cuuntdeve.Signal();
+                cuuntdeve.Wait();
             }
             return result;
         }
