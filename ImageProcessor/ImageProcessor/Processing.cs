@@ -278,7 +278,7 @@ namespace ImageProcessor
 
                 foreach (var v in bmp)
                 {
-                    bool isEnqueued = ThreadPool.QueueUserWorkItem(delegate
+                    ThreadPool.QueueUserWorkItem(delegate
                     {
                         cuuntdeve.AddCount();
                         bitmap = v;
@@ -286,6 +286,7 @@ namespace ImageProcessor
                         cuuntdeve.Signal();
                         manualResEve.Set();
                     });
+                    Thread.Sleep(500);
                 }
                 manualResEve.WaitOne();
                 cuuntdeve.Signal();
@@ -306,7 +307,7 @@ namespace ImageProcessor
 
                 foreach (var v in bmp)
                 {
-                    bool isEnqueued = ThreadPool.QueueUserWorkItem(delegate
+                    ThreadPool.QueueUserWorkItem(delegate
                     {
                         cuuntdeve.AddCount();
                         bitmap = v;
@@ -314,6 +315,7 @@ namespace ImageProcessor
                         cuuntdeve.Signal();
                         manualResEve.Set();
                     });
+                    Thread.Sleep(500);
                 }
                 manualResEve.WaitOne();
                 cuuntdeve.Signal();
@@ -334,7 +336,7 @@ namespace ImageProcessor
 
                 foreach (var v in bmp)
                 {
-                    bool isEnqueued = ThreadPool.QueueUserWorkItem(delegate
+                    ThreadPool.QueueUserWorkItem(delegate
                     {
                         cuuntdeve.AddCount();
                         bitmap = v;
@@ -342,6 +344,7 @@ namespace ImageProcessor
                         cuuntdeve.Signal();
                         manualResEve.Set();
                     });
+                    Thread.Sleep(500);
                 }
                 manualResEve.WaitOne();
                 cuuntdeve.Signal();
@@ -362,7 +365,7 @@ namespace ImageProcessor
 
                 foreach (var v in bmp)
                 {
-                    bool isEnqueued = ThreadPool.QueueUserWorkItem(delegate
+                    ThreadPool.QueueUserWorkItem(delegate
                     {
                         cuuntdeve.AddCount();
                         bitmap = v;
@@ -370,6 +373,7 @@ namespace ImageProcessor
                         cuuntdeve.Signal();
                         manualResEve.Set();
                     });
+                    Thread.Sleep(500);
                 }
                 manualResEve.WaitOne();
                 cuuntdeve.Signal();
@@ -390,7 +394,7 @@ namespace ImageProcessor
 
                 foreach (var v in bmp)
                 {
-                    bool isEnqueued = ThreadPool.QueueUserWorkItem(delegate
+                    ThreadPool.QueueUserWorkItem(delegate
                     {
                         cuuntdeve.AddCount();
                         bitmap = v;
@@ -398,6 +402,7 @@ namespace ImageProcessor
                         cuuntdeve.Signal();
                         manualResEve.Set();
                     });
+                    Thread.Sleep(500);
                 }
                 manualResEve.WaitOne();
                 cuuntdeve.Signal();
@@ -413,7 +418,10 @@ namespace ImageProcessor
         {
             List<Bitmap> result = new List<Bitmap>();
             foreach (var v in bmp)
+            {
+                bitmap = v;
                 result.Add(Rotate(degree));
+            }
             return result;
         }
 
@@ -424,7 +432,10 @@ namespace ImageProcessor
         {
             List<Bitmap> result = new List<Bitmap>();
             foreach (var v in bmp)
+            {
+                bitmap = v;
                 result.Add(Flip(rotate));
+            }
             return result;
         }
         #endregion
